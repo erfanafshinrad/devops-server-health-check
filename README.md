@@ -43,7 +43,35 @@ Run it:
 ```bash
 ./health-check.sh
 ```
+## JSON output
 
+Use the `--json` option to generate machine-readable output:
+
+```bash
+./health-check.sh --json
+```
+
+Save the report to a file:
+
+```bash
+./health-check.sh --json > health-report.json
+```
+
+Format the output with `jq`:
+
+```bash
+./health-check.sh --json | jq
+```
+
+The JSON output includes:
+
+- Overall health status
+- CPU and memory usage
+- Load averages
+- Disk utilization
+- Service status
+- Docker and container status
+- Configured warning thresholds
 ## Custom warning thresholds
 
 The default thresholds are:
